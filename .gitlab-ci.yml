@@ -18,6 +18,7 @@ build-master:
         DOCKER_FULL_PATH: index.docker.io/polyswarm/transaction-signer
     stage: build
     script:
+        - docker login -u "$SWARM_DOCKER_USER" -p "$SWARM_DOCKER_PASSWORD" $DOCKER_SWARM_REGISTRY
         - docker build -t $DOCKER_FULL_PATH .
         - docker push $DOCKER_FULL_PATH
 
