@@ -17,7 +17,7 @@ function run(ws) {
   ws.onopen = msg => {
     // reset the count if we can't connect
     tryCount = 0;
-    console.log('Connected to transactions soccket!');
+    console.log('Connected to transactions socket!');
   };
 
   ws.onmessage = msg => {
